@@ -8,10 +8,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 490172}
+  - 135: {fileID: 13521920}
   - 33: {fileID: 3389546}
-  - 135: {fileID: 13531022}
   - 23: {fileID: 2317396}
   - 54: {fileID: 5437996}
+  - 114: {fileID: 11485110}
+  - 114: {fileID: 11427546}
   m_Layer: 0
   m_Name: Paintball
   m_TagString: Untagged
@@ -79,8 +81,32 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!135 &13531022
+  m_CollisionDetection: 2
+--- !u!114 &11427546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d937eb5eb174e2349bdf31699abcc00e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11485110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb97f38af059ef47beed769409352b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splatTypes:
+  - {fileID: 111404, guid: a6af6586d35bf5648928f82fa6d5a646, type: 2}
+--- !u!135 &13521920
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -91,7 +117,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.00000035762787, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

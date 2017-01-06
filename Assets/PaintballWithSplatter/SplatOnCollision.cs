@@ -10,10 +10,11 @@ public class SplatOnCollision : MonoBehaviour {
     {
         Destroy(gameObject);
         
-        Instantiate(
-            splatTypes[Random.Range(0, splatTypes.Length - 1)],
+        var splat = Instantiate(
+            splatTypes[Random.Range(0, splatTypes.Length)],
             collision.contacts[0].point,
             Quaternion.FromToRotation(Vector3.up, collision.contacts[0].normal)
-        );
+        ) as GameObject;
+        splat.transform.Rotate(0, Random.Range(0f, 360f), 0);
     }
 }

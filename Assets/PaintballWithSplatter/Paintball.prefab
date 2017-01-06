@@ -106,6 +106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   splatTypes:
   - {fileID: 111404, guid: a6af6586d35bf5648928f82fa6d5a646, type: 2}
+  - {fileID: 177878, guid: 9ca200feae9102440a9b7b2afbe4e1b6, type: 2}
+  - {fileID: 118004, guid: 26973051d14e37a439e206c0a514750e, type: 2}
 --- !u!135 &13521920
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -116,7 +118,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0.00000035762787, z: 0}
 --- !u!1001 &100100000
 Prefab:

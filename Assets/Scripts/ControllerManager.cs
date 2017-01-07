@@ -6,16 +6,12 @@ public class ControllerManager : MonoBehaviour {
     private SteamVR_TrackedObject trackedObject;
     private SteamVR_Controller.Device device;
 
+    public PaintballFirer paintballFirer;
     public Rigidbody paintballPrefab;
-    public Transform firePosition;
-
-    public AudioSource audio;
-    public AudioClip clip;
-
+    
 	// Use this for initialization
 	void Start () {
         trackedObject = GetComponent<SteamVR_TrackedObject>();
-        audio = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -24,10 +20,7 @@ public class ControllerManager : MonoBehaviour {
 
         if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
-            Rigidbody paintball;
-            paintball = Instantiate(paintballPrefab, firePosition.position, firePosition.rotation) as Rigidbody;
-            paintball.AddForce(firePosition.forward * 2000);
-            audio.PlayOneShot(clip);
+            paintballFirer.FirePaintball(paintballPrefab);
         }
 	}
 }

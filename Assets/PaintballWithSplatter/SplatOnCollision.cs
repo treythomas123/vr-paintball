@@ -21,6 +21,6 @@ public class SplatOnCollision : MonoBehaviour {
         splat.transform.Rotate(0, Random.Range(0f, 360f), 0);
 
         Destroy(paintball);
-        Destroy(splat, 5);
+        Destroy(splat, 30);
     }
 }

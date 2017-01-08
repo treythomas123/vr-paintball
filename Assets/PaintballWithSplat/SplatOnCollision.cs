@@ -17,6 +17,8 @@ public class SplatOnCollision : MonoBehaviour {
         var splatRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
         var splat = Instantiate(splatType, splatPosition, splatRotation) as GameObject;
 
+        splat.transform.SetParent(otherObject.transform);
+
         // randomly rotate the splat to vary its appearance
         splat.transform.Rotate(0, Random.Range(0f, 360f), 0);
 

@@ -9,17 +9,27 @@ public class SplatOnCollision : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         var paintball = gameObject;
-        var hit = collision.contacts[0];
-        var otherObject = hit.otherCollider;
+        Destroy(paintball);
 
-        var splatPosition = otherObject.ClosestPointOnBounds(hit.point);
+        var otherObject = collision.gameObject;
+        var hit = collision.contacts[0];
+        var otherCollider = hit.otherCollider;
+    
+        var splatPosition = otherCollider.ClosestPointOnBounds(hit.point);
         var splatRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
         var splat = Instantiate(splatPrefab, splatPosition, splatRotation) as GameObject;
+        
 
         // set parent so that the splat will move with the object that was hit
-        splat.transform.SetParent(otherObject.transform);
+        splat.transform.SetParent(otherCollider.transform);
+
+        // use custom impact sound if other object has one set
+        var otherObjectImpactSound = otherObject.GetComponent<PaintballImpactSound>();
+        if (otherObjectImpactSound && otherObjectImpactSound.clip)
+        {
+            splat.GetComponent<Splat>().impactSound = otherObjectImpactSound.clip;
+        }
         
-        Destroy(paintball);
         Destroy(splat, 30);
     }
 }

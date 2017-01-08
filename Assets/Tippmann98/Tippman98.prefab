@@ -341,6 +341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePosition: {fileID: 480138}
   clip: {fileID: 8300000, guid: 7c3972e2f94509541915f98a699a00ce, type: 3}
+  smokePrefab: {fileID: 107900, guid: cbe46b88fccc2b94ea93a3b09a58e837, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

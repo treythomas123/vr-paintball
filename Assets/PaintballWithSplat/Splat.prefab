@@ -105,8 +105,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.687
+  m_Pitch: 2.14
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc6d4c247f9a694985947f9d4839d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactSound: {fileID: 8300000, guid: e7c5383e7ff8745eb95e5fa898e036ce, type: 3}
+  impactSound: {fileID: 8300000, guid: a9be09d414a174bf6afa20e6d1a97be5, type: 3}
   textures:
   - {fileID: 2800000, guid: 04729eac8c068474fbf90967ec4c10bd, type: 3}
   - {fileID: 2800000, guid: 9dbffde688a427a43bbfd0d576f7cccf, type: 3}

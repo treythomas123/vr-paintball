@@ -4,7 +4,7 @@ using System.Collections;
 
 public class SplatOnCollision : MonoBehaviour {
 
-    public GameObject[] splatTypes;
+    public GameObject splatPrefab;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -12,16 +12,13 @@ public class SplatOnCollision : MonoBehaviour {
         var hit = collision.contacts[0];
         var otherObject = hit.otherCollider;
 
-        var splatType = splatTypes[Random.Range(0, splatTypes.Length)];
         var splatPosition = otherObject.ClosestPointOnBounds(hit.point);
         var splatRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-        var splat = Instantiate(splatType, splatPosition, splatRotation) as GameObject;
+        var splat = Instantiate(splatPrefab, splatPosition, splatRotation) as GameObject;
 
+        // set parent so that the splat will move with the object that was hit
         splat.transform.SetParent(otherObject.transform);
-
-        // randomly rotate the splat to vary its appearance
-        splat.transform.Rotate(0, Random.Range(0f, 360f), 0);
-
+        
         Destroy(paintball);
         Destroy(splat, 30);
     }
